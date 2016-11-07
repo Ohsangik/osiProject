@@ -23,15 +23,10 @@ $(document).on("click","#allList",function(){
 
         //서버쪽 프로그램을 실행시키는 과정이 성공하면
         success : function(result){
-            alert("정상처리되었습닏.");
-
-            alert(result[0].title);
-            alert(result[0].count);
             var rp =null;
 
             //시작페이지 번호 구하기
             var firstpageNum = Math.ceil(result[0].page/10);
-            alert(firstpageNum+"첫번째 페이지 번호");
             var lastPageNum = firstpageNum*10;
             var firstpageNum = 10*firstpageNum-9;
 
@@ -146,7 +141,6 @@ $(document).on("click","#allList",function(){
 
 function list(rp){
 
-    alert("들어왓습ㄴ다."+rp);
     $("li").remove();
     $("#contents1").attr("id","contents");
 
@@ -337,22 +331,21 @@ function searchBook(){
 
             //서버쪽 프로그램을 실행시키는 과정이 성공하면
             success : function(result){
-                alert("정상처리되었습닏.");
-                alert(result[0].title);
+                /*alert("정상처리되었습니다");*/
 
                 //시작페이지 번호 구하기
                 var firstpageNum = Math.ceil(result[0].page/10);
 
-                alert(result[0].count+"카운트값");
+                //alert(result[0].count+"카운트값");
 
-                alert(firstpageNum+"첫번째 페이지 번호");
+                //alert(firstpageNum+"첫번째 페이지 번호");
                 var lastPageNum = firstpageNum*10;
                 var firstpageNum = 10*firstpageNum-9;
 
                 $(".paging").empty();
 
 
-                 alert(result[0].keyword);
+                 //alert(result[0].keyword);
                 for(var i=0;i<result.length;i++) {
 
                     var tr = $("<li></li>").attr("data-isbn", result[i].isbn);
@@ -430,7 +423,7 @@ function searchBook(){
 
                             if(firstpageNum-10>=11||firstpageNum==11){
                                 if(checkpage==0) {
-                                    alert("첫번째페이지를 출력합니닷"+firstpageNum);
+                                    //alert("첫번째페이지를 출력합니닷"+firstpageNum);
                                     $(".paging").append(sp1);
                                 }
                             }
@@ -469,8 +462,6 @@ function searchBook1(page,keyword){
 
     //enter key가 입력됐을때 사용자가 입력한 내용을 가지고
     //서버 프로그램 Ajax방식으로 호출
-    alert(keyword);
-    alert(page+"searchbook1 ");
 
         //ajax 호출
     $("li").remove();
@@ -499,12 +490,9 @@ function searchBook1(page,keyword){
 
             //서버쪽 프로그램을 실행시키는 과정이 성공하면
             success : function(result){
-                alert("정상처리되었습닏.");
-                alert(result[0].title);
 
                 //시작페이지 번호 구하기
                 var firstpageNum = Math.ceil(result[0].page/10);
-                alert(firstpageNum+"첫번째 페이지 번호");
                 var lastPageNum = firstpageNum*10;
                 var firstpageNum = 10*firstpageNum-9;
 
@@ -585,7 +573,7 @@ function searchBook1(page,keyword){
 
                             if(firstpageNum-10>=11||firstpageNum==11){
                                 if(checkpage==0) {
-                                    alert("첫번째페이지를 출력합니닷"+firstpageNum);
+                                   // alert("첫번째페이지를 출력합니닷"+firstpageNum);
                                     $(".paging").append(sp1);
                                 }
                             }
@@ -623,7 +611,6 @@ function searchBook1(page,keyword){
 $(document).on('click', '#updatecom', function() {
 
     var isbn = $(this).parent().parent().attr("data-isbn");
-    alert(isbn);
 
     var li = $(this).parent().parent();
 
@@ -704,14 +691,14 @@ $(document).on('click', '#com', function() {
 
 
 
-
-
 //자바 스크립트 내에서 삭제되게 하기!!
 $(document).on('click', '#remove', function() {
 
 
     $(this).parent().parent().remove();
+/*
     alert($(this).parent().parent().attr("data-isbn"));
+*/
 
         $.ajax({
             // url : 서버 프로그램에 대한 url
@@ -776,7 +763,9 @@ function mySort() {
 $(document).on('click', '#detail', function() {
 
     var isbn = $(this).parent().parent().attr("data-isbn");
+/*
     alert(isbn);
+*/
 
     $(".detail").remove();
 

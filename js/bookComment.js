@@ -48,8 +48,13 @@ $(function(){
 
             //서버쪽 프로그램을 실행시키는 과정이 성공하면
             success : function(result){
+                if(result==true){
+                    alert("서평이 입력되었습니다.");
 
-                alert("서평이 입력되었습니다.");
+                    $(location).attr("href","commentList.html");
+
+                }
+
             },
             //서버쪽 프로그램을 실행시키는 과정이 실패하면!!
             error : function(){
@@ -61,6 +66,7 @@ $(function(){
     });
 
 });
+
 
 
 
@@ -110,7 +116,6 @@ $(function(){
     });
 
 });
-
 
 
 

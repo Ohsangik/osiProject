@@ -116,8 +116,11 @@ $(function(){
 
         //서버쪽 프로그램을 실행시키는 과정이 성공하면
         success : function(result){
-            alert("세션에서 email값을 가져옵니다."+result.email);
             check = result.email;
+            if(result.email==null){
+                alert("로그인이필요합니다.");
+                $(location).attr("href","index1.html");
+            }
         },
         //서버쪽 프로그램을 실행시키는 과정이 실패하면!!
         error : function(){

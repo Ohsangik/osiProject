@@ -59,6 +59,8 @@ $(document).on('click', '#join', function() {
                     success : function(result){
 
                         alert("회원가입이 완료되었습니다.");
+                        $(location).attr("href","index1.html");
+
                     },
                     //서버쪽 프로그램을 실행시키는 과정이 실패하면!!
                     error : function(){

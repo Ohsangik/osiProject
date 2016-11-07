@@ -2,8 +2,6 @@
  * Created by CJuser on 2016-11-02.
  */
 
-
-
 function insertBook(){
 
     //enter key가 입력됐을때 사용자가 입력한 내용을 가지고
@@ -39,6 +37,8 @@ function insertBook(){
             //서버쪽 프로그램을 실행시키는 과정이 성공하면
             success : function(){
                 alert("도서등록이 완료되었습니다.");
+
+                $(location).attr("href","bookListall.html");
 
             },
             //서버쪽 프로그램을 실행시키는 과정이 실패하면!!
