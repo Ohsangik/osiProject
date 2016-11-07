@@ -223,8 +223,6 @@ $(function(){
 
             else{
 
-                $(location).attr("href","index1.html");
-                $(".inout").text("로그인");
             }
 
         },
